@@ -248,7 +248,7 @@ public class EPPTransportTCP extends EPPTransportBase
 
             String final_xml = buf.toString();
 
-            int len = final_xml.length();
+            int len = final_xml.getBytes().length;
             writeBufferSize(writer_to_server_, len + INT_SZ);
             writer_to_server_.write(final_xml.getBytes(), 0, len);
             writer_to_server_.flush();
